@@ -1,0 +1,19 @@
+@import "../../../../scss_utils/vars";
+
+.ButtonLink {
+  width: 270px;
+  height: 55px;
+  border-radius: 50px;
+  border: 2px solid $accent-color;
+  background-color: #724CF970;
+  color: $main-light;
+  text-align: center;
+
+  transition: all 100ms ease-in-out;
+  &:hover {
+    background: #724CF999;
+  }
+  &:active {
+    background: #724CF950;
+  }
+}

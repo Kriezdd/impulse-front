@@ -1,0 +1,19 @@
+@import "../../../../scss_utils/vars";
+
+.button-submit {
+    font-size: 1.125rem;
+    color: $accent-color;
+    padding: 0.875rem 1rem;
+    background: $main-light;
+    border-radius: 10px;
+    border: 1px solid $accent-color;
+    box-shadow: rgba($accent-color, 0.1) 0.25rem 0.25rem 0.625rem;
+    transition: all 100ms ease-in-out;
+    &:hover {
+        background: rgba($accent-color, 0.1);
+    }
+    &:active {
+        background: rgba($accent-color, 0.5);
+        color: $main-light;
+    }
+}

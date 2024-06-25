@@ -1,0 +1,19 @@
+@import "../../../scss_utils/vars";
+
+.Team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .Team-Spoiler {
+    color: $accent-color;
+  }
+  .Team-Title {
+    margin-bottom: 3.1rem;
+  }
+  .Team-Grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+}

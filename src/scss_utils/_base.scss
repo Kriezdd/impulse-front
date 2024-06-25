@@ -1,0 +1,114 @@
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: 'TT_Rounds_Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/resources/fonts/TT_Rounds_Neue_Medium.woff2') format('woff2'),
+  url('/resources/fonts/TT_Rounds_Neue_Medium.woff') format('woff');
+};
+
+@import "vars";
+
+// fonts
+
+html {
+  color: $main-dark;
+  font-family: $main-font;
+}
+h1 {
+  font-family: $accent-font;
+  font-size: $h1-font-size;
+  font-weight: 700;
+}
+h2 {
+  font-size: $h2-font-size;
+  font-weight: 600;
+}
+h3 {
+  font-size: $h3-font-size;
+  font-weight: 600;
+}
+p, button, ul {
+  font-size: $p-font-size;
+  font-weight: 400;
+}
+strong {
+  font-weight: 700;
+}
+
+
+// на всякий
+*, h1, h2, h3, p, button, li, a, strong, span {
+  padding: 0;
+  margin: 0;
+}
+
+// logo
+.logo {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  .logo-title {
+    font-family: $logo-font;
+    font-size: $logo-font-size;
+    font-weight: 400;
+    color: $main-dark;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .footer-text {
+    color: $dull-light;
+  }
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+// base styling
+
+.html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1320px;
+}
+
+.gaps {
+  margin: 150px auto;
+}
+
+button, a {
+  font-family: $main-font;
+  font-size: $p-font-size;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  color: $main-dark;
+}
+
+body {
+  background: url("resources/images/bg.png");
+  background-size: cover;
+}
+
+.small-text {
+  font-size: $s-font-size;
+}
+.light-bg {
+  color: rgba($main-dark, 0.8);
+}
+
+
+.xs-text {
+  font-size: $xs-font-size;
+}

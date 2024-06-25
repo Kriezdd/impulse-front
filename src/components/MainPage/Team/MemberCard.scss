@@ -1,0 +1,52 @@
+@import "../../../scss_utils/vars";
+
+.MemberCard {
+  position: relative;
+  width: 250px;
+  height: 360px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px $border-color;
+
+  .MemberBackground {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .InfoContainer.active {
+    opacity: 1;
+  }
+
+  .InfoContainer {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    transition: opacity 0.3s linear;
+
+    .Member-MainInfo {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: $main-light;
+      margin-bottom: 20px;
+
+      .memberPos {
+        margin-top: 5px;
+      }
+    }
+
+    background: linear-gradient(rgba(29, 29, 29, 0) 60%, rgba(29, 29, 29, 100) 100%);
+  }
+}

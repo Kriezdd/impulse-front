@@ -1,0 +1,20 @@
+@import "../../../../scss_utils/vars";
+
+.button-form {
+  width: 17rem;
+  height: 3.5rem;
+  border-radius: 50px;
+  border: 2px solid $accent-color;
+  background: $main-light;
+  color: $accent-color;
+  text-align: center;
+
+  transition: all 100ms ease-in-out;
+  &:hover {
+    background: rgba($accent-color, 0.2);
+  }
+  &:active {
+    color: $main-light;
+    background: rgba($accent-color, 0.5);
+  }
+}

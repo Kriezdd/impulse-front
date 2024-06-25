@@ -1,0 +1,36 @@
+@import "../../scss_utils/vars";
+
+.Header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: $main-light;
+  box-shadow: 0 4px 4px 0 rgba(114, 76, 249, 0.1);
+  display: flex;
+  align-items: center;
+
+  nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 100px;
+
+      li, a {
+        transition: all 100ms ease-in-out;
+
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}

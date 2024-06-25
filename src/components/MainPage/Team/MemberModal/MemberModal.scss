@@ -1,0 +1,77 @@
+@import '../../../../scss_utils/vars';
+
+.additional-bg {
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 360px;
+  border-radius: 10px;
+  transition: opacity  0.3s ease, transform  0.3s ease;
+
+  &:hover::before {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 0.8;
+  }
+}
+
+.MemberModal {
+  z-index: 2;
+  background:  #1D1D1D;
+  opacity: 0;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+.MemberModal.active {
+  opacity: 0.9;
+}
+
+.info-container {
+  width: 100%;
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  transition: opacity  0.3s ease, transform  0.3s ease;
+
+  &::before {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  &::after {
+    opacity: 1;
+  }
+
+  .memberPos {
+    font-size: $s-font-size;
+    font-weight: 600;
+  }
+
+  .DetailedInfo-Quote {
+    border-left: #724CF9 2px solid;
+    padding-left: 7px;
+  }
+
+  .MemberInfo {
+    box-sizing: border-box;
+    color: $main-light;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+  }
+}
+
+.grad {
+  background: linear-gradient(transparent, #724CF9);
+  opacity: 0.4;
+  border-radius: 0 0 10px 10px;
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

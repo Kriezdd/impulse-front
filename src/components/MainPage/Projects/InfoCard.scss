@@ -1,0 +1,57 @@
+@import "../../../scss_utils/vars";
+
+//todo: finish restyling
+
+
+.InfoCard {
+  position: relative;
+  width: 600px;
+  height: 370px;
+
+  h2, p, ul {
+    color: $main-light;
+    text-shadow: 2px 2px 4px $secondary-dark;
+  }
+  h2 {
+    font-family: $accent-font;
+  }
+
+  .Background {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-dark;
+    border-radius: 25px;
+
+
+    .Background-Image {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 35%;
+      filter: blur(1px);
+      border-radius: 25px;
+      border: 1px solid $border-color;
+      box-shadow: 2px 2px 4px $border-color;
+  }
+  }
+  .InfoCard-TextArea {
+    height: 100%;
+    margin: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    .TextArea-QA {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .TextArea-List {
+        padding-left: 25px;
+      }
+    }
+  }
+}

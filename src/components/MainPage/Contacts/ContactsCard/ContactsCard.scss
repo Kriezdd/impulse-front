@@ -1,0 +1,31 @@
+@import "../../../../scss_utils/vars";
+
+.contacts-card {
+  padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  border-radius: 10px;
+  background: $main-light;
+  box-shadow: rgba($accent-color, 0.1) 0.25rem 0.25rem 0.625rem;
+
+  .contacts-text-link {
+    color: $accent-color;
+    transition: color 200ms ease-in-out;
+    &:hover {
+      color: $main-dark;
+      text-decoration: underline;
+    }
+  }
+
+  .contacts__social {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+
