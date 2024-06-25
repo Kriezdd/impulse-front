@@ -12,7 +12,7 @@ const MainSection = () => {
                     </h1>
                     <p>
                         Место, где мы играем, исследуем, обучаемся новому,
-                        чтобы <strong>раскрывать потенциал</strong> и <strong>развиваться</strong>
+                        чтобы <strong>раскрывать потенциал</strong> и <strong>развиваться</strong>
                     </p>
                 </div>
                 <ButtonScroll scrollTo={"team"} title={"Узнать больше о нас"} />
