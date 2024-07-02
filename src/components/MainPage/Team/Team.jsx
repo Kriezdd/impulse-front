@@ -5,9 +5,7 @@ import './Team.scss';
 
 const Team = () => {
 
-    const gallery = transpileImages(Object.values(import.meta.glob('../../../images/team/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url', import: 'default'})));
-
-
+    const gallery = transpileImages(Object.values(import.meta.glob('$images/team/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url', import: 'default'})));
     const members = [
         {
             id: 1,

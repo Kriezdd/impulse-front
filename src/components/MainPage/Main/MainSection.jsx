@@ -2,10 +2,7 @@ import ButtonScroll from "../../ui/Buttons/ButtonScroll/ButtonScroll";
 import './MainSection.scss';
 
 const MainSection = () => {
-
-    const gallery = Object.values(import.meta.glob('../../../images/main/*.{png,jpg,jpeg,svg,PNG,JPEG,SVG}', { eager: true, query: '?url', import: 'default'}))
-    console.log(gallery)
-
+    const gallery = Object.values(import.meta.glob('$images/main/*.{png,jpg,jpeg,svg,PNG,JPEG,SVG}', { eager: true, query: '?url', import: 'default'}))
     return (
         <div className="MainSection wrapper gaps" id="main">
             <div className="MainSection-Grid">

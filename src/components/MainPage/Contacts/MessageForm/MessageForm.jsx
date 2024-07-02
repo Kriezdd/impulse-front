@@ -1,6 +1,13 @@
 import ButtonSubmit from "../../../ui/Buttons/ButtonSubmit/ButtonSubmit.jsx";
 import {useForm} from "react-hook-form";
 import './MessageForm.scss';
+import * as emailjs from "@emailjs/browser";
+
+const emailJS = {
+  serviceID: "service_ozsz83l",
+  templateID: "template_6ds5y48",
+  publicID: "o9lstfwhy-ua6dvbl",
+}
 
 const MessageForm = () => {
   const {
@@ -9,7 +16,21 @@ const MessageForm = () => {
     formState: {errors},
   } = useForm()
   const onSubmit = (data) => {
-    console.log(data)
+    const templateParams = {
+      from_name: data.name,
+      to_name: 'Impulse Team',
+      phone: data.phone,
+      message:data.message,
+    };
+
+    emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams, emailJS.publicID).then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      },
+      (error) => {
+        console.log('FAILED...', error);
+      },
+    );
   }
 
   return (

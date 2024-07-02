@@ -16,7 +16,7 @@ const Leagues = () => {
     image: nextProjectPic,
   }
 
-  const images = transpileImages(Object.values(import.meta.glob('../../../images/impulse/ladder/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url', import: 'default'})));
+  const images = transpileImages(Object.values(import.meta.glob('$images/impulse/ladder/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url', import: 'default'})));
   const impulseInfo = [
     {
       title: 'Индивидуальный подход',
