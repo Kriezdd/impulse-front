@@ -4,7 +4,6 @@ import Divider from "../ui/Divider/Divider.jsx";
 
 const InfoLadder = ({info}) => {
   const projectInfo = [...info];
-  console.log(info);
 
   return (
     <div className="gaps">

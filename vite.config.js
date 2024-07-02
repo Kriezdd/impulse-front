@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '$': resolve('./src'),
       '$images': resolve('./src/images'),
+      '$components': resolve('./src/components'),
     }
   }
 })

@@ -1,8 +1,12 @@
 import Divider from "../ui/Divider/Divider.jsx";
 import ButtonForm from "../ui/Buttons/ButtonForm/ButtonForm.jsx";
+import Modal from '$components/Modal/Modal.jsx'
 import './ProjectAd.scss';
+import {useState} from "react";
 
 const ProjectAd = ({info}) => {
+  const [isModalActive, setModalActive] = useState(false);
+
   const projectAd = info;
 
   return (
@@ -53,11 +57,13 @@ const ProjectAd = ({info}) => {
             </div>
           </div>
           <div className="info-price">
-            <ButtonForm title={"Успей оставить заявку"}/>
+            <ButtonForm title={"Успей оставить заявку"} setModalActive={setModalActive} />
             <p>Стоимость: <strong>{projectAd.price}</strong></p>
           </div>
         </div>
       </div>
+
+      <Modal isModalActive={isModalActive} setModalActive={setModalActive} />
     </div>
   );
 };

@@ -1,8 +1,12 @@
 import './ButtonForm.scss';
 
-const ButtonForm = ({title}) => {
+const ButtonForm = ({title, setModalActive}) => {
+  function clickHandler() {
+    setModalActive(true);
+  }
+
   return (
-    <button className="button-form">{title}</button>
+    <button onClick={clickHandler} className="button-form">{title}</button>
   );
 };
 
