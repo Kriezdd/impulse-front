@@ -1,22 +1,12 @@
 @import "../../../scss_utils/vars";
 
-//todo: finish restyling
-
-
-.InfoCard {
+.info-card {
   position: relative;
-  width: 600px;
-  height: 370px;
+  max-width: 37.5rem;
+  max-height: 24rem;
+  border-radius: 25px;
 
-  h2, p, ul {
-    color: $main-light;
-    text-shadow: 2px 2px 4px $secondary-dark;
-  }
-  h2 {
-    font-family: $accent-font;
-  }
-
-  .Background {
+  .info-card__background {
     position: absolute;
     z-index: -2;
     width: 100%;
@@ -25,7 +15,7 @@
     border-radius: 25px;
 
 
-    .Background-Image {
+    .info-card__background-image {
       position: absolute;
       z-index: -1;
       width: 100%;
@@ -37,21 +27,30 @@
       border-radius: 25px;
       border: 1px solid $border-color;
       box-shadow: 2px 2px 4px $border-color;
+    }
   }
-  }
-  .InfoCard-TextArea {
+
+  .info-card__text {
     height: 100%;
     margin: 20px 50px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    .TextArea-QA {
+    gap: 1.5rem;
+
+    .text__list__container {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      .TextArea-List {
-        padding-left: 25px;
+      gap: 0.625rem;
+
+      .text__list {
+        padding-left: 1.5rem;
       }
+    }
+    .text-light {
+      color: $main-light;
+    }
+    .text-title {
+      font-family: $accent-font;
     }
   }
 }

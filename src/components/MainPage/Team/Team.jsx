@@ -5,13 +5,13 @@ import './Team.scss';
 
 const Team = () => {
 
-    const gallery = transpileImages(Object.values(import.meta.glob('$images/team/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url', import: 'default'})));
+    const images = transpileImages(Object.values(import.meta.glob('$images/team/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url', import: 'default'})));
     const members = [
         {
             id: 1,
             name: 'Обертяева Карина',
             position: 'Руководитель организации',
-            pic: gallery['karina'],
+            pic: images['karina'],
             moreInfo: {
                 experience: 'с 2016 года',
                 fact: 'Организатор социального проекта «Дети-Детям» ' +
@@ -26,7 +26,7 @@ const Team = () => {
             id: 2,
             name: 'Благушин Никита',
             position: 'Главный игровой методист',
-            pic: gallery['nikita'],
+            pic: images['nikita'],
             moreInfo: {
                 experience: 'с 2017 года',
                 fact: 'Участвовал во многих волонтёрских проектах. ' +
@@ -40,7 +40,7 @@ const Team = () => {
             id: 3,
             name: 'Болтнева Алиса',
             position: 'Главный методист обучения',
-            pic: gallery['alice'],
+            pic: images['alice'],
             moreInfo: {
                 experience: 'с 2017 года',
                 fact: 'Участвовал во многих волонтёрских проектах.',
@@ -53,7 +53,7 @@ const Team = () => {
             id: 4,
             name: 'Хвалынский Фёдор',
             position: 'Методист обучения',
-            pic: gallery['fedor'],
+            pic: images['fedor'],
             moreInfo: {
                 experience: 'с 2017 года',
                 fact: 'Ведущий детских развивающих коллективов по программе SOFT-skills ' +
@@ -67,7 +67,7 @@ const Team = () => {
             id: 5,
             name: 'Попова Ксения',
             position: 'Организатор, творец',
-            pic: gallery['ksenia'],
+            pic: images['ksenia'],
             moreInfo: {
                 experience: 'с 2016 года',
                 fact: 'Была участником и организатором волонтерского проекта по проведению праздников ' +
@@ -82,7 +82,7 @@ const Team = () => {
             id: 6,
             name: 'Переславцев Данила',
             position: 'Игровой методист',
-            pic: gallery['danila'],
+            pic: images['danila'],
             moreInfo: {
                 experience: 'с 2016 года',
                 fact: 'Отучился в театральной школе и принимал участие в съёмках Ералаша',
@@ -94,7 +94,7 @@ const Team = () => {
             id: 7,
             name: 'Пищулина Алина',
             position: 'Организатор пространства',
-            pic: gallery['alina'],
+            pic: images['alina'],
             moreInfo: {
                 experience: 'с 2016 года',
                 fact: 'Преподает иностранные языки детям. Любит фотографировать',
@@ -106,7 +106,7 @@ const Team = () => {
             id: 8,
             name: 'Козлова Лиза',
             position: 'Руководитель Лиг',
-            pic: gallery['danila'],
+            pic: images['danila'],
             moreInfo: {
                 experience: 'с 2016 года',
                 fact: 'Преподает иностранные языки детям. Любит фотографировать',

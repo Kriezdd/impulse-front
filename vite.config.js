@@ -11,5 +11,6 @@ export default defineConfig({
       '$images': resolve('./src/images'),
       '$components': resolve('./src/components'),
     }
-  }
+  },
+  base: "/impulse-website/",
 })

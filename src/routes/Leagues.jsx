@@ -2,10 +2,12 @@ import ProjectAd from "../components/ProjectAd/ProjectAd.jsx";
 import InfoLadder from "../components/InfoLadder/InfoLadder.jsx";
 import nextProjectPic from "../images/projects/league.jpg";
 import transpileImages from "../utils/TranspileImages.js";
+import Contacts from "$components/MainPage/Contacts/Contacts.jsx";
 
 const Leagues = () => {
 
   const projectAd = {
+    project: 'Лиги',
     title: 'Лиги',
     spoiler: '',
     description: '– это еженедельные занятия, направленные на развитие навыков soft skills - тех навыков которые помогут ребенку на любом этапе его жизни. На занятиях ребенок будет находиться в команде с другими детьми под началом одного или нескольких наших кураторов, основной задачей которого является достижение роста команды и ребенка лично.',
@@ -44,6 +46,7 @@ const Leagues = () => {
     <div>
       <ProjectAd info={projectAd}/>
       <InfoLadder info={impulseInfo}/>
+      <Contacts/>
     </div>
   );
 };

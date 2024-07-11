@@ -6,7 +6,6 @@ import {useState} from "react";
 
 const ProjectAd = ({info}) => {
   const [isModalActive, setModalActive] = useState(false);
-
   const projectAd = info;
 
   return (
@@ -63,7 +62,7 @@ const ProjectAd = ({info}) => {
         </div>
       </div>
 
-      <Modal isModalActive={isModalActive} setModalActive={setModalActive} />
+      <Modal isModalActive={isModalActive} setModalActive={setModalActive} project={projectAd.project} />
     </div>
   );
 };

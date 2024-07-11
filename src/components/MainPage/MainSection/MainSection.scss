@@ -1,0 +1,96 @@
+@import "../../../scss_utils/vars";
+@import "../../../scss_utils/mixins";
+
+.main-section {
+  width: 100%;
+  .main-section__container {
+    display: grid;
+    grid-template-areas: "a b" "c b" "d b";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 1rem;
+    .info__text.title {
+      grid-area: a;
+      font-weight: 600;
+      margin: 0.6rem 0;
+      align-self: flex-end;
+
+      .title-accent {
+        font-weight: 700;
+        color: $accent-color;
+      }
+    }
+    .info__text.paragraph {
+      max-width: 600px;
+      grid-area: c;
+    }
+
+    .main-section__rectangle {
+      grid-area: b;
+      align-self: center;
+      justify-self: center;
+      width: 600px;
+      height: 600px;
+    }
+    .ButtonScroll {
+      grid-area: d;
+    }
+  }
+}
+
+@include respond(tab-land) {
+  .main-section {
+    .main-section__container {
+      .main-section__rectangle {
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .main-section {
+    .main-section__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+      .info__text {
+        text-align: center;
+      }
+      .info__text.title {
+        align-self: center;
+      }
+      .info__text.paragraph {
+        font-size: 1.2rem;
+      }
+    }
+
+    .main-section__info {
+      align-items: center;
+    }
+
+    .info__container {
+      text-align: center;
+    }
+  }
+}
+
+@include respond(phone) {
+  .main-section {
+    .main-section__container {
+      .info__text.title {
+        font-size: 2.5rem;
+      }
+      .info__text.paragraph {
+        max-width: 550px;
+        font-size: 1rem;
+      }
+      .main-section__rectangle {
+        width: 370px;
+        height: 370px;
+      }
+    }
+  }
+}

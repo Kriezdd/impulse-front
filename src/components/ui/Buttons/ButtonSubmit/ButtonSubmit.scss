@@ -10,10 +10,11 @@
     box-shadow: rgba($accent-color, 0.1) 0.25rem 0.25rem 0.625rem;
     transition: all 100ms ease-in-out;
     &:hover {
-        background: rgba($accent-color, 0.1);
+        background: rgba($accent-color, 0.5);
+        color: $main-light;
     }
     &:active {
-        background: rgba($accent-color, 0.5);
+        background: rgba($accent-color, 0.1);
         color: $main-light;
     }
 }

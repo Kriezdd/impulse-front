@@ -19,6 +19,20 @@
   opacity: 1;
 }
 
+.modal-content {
+  max-width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+
+  .modal-content__text {
+    width: 80%;
+    text-align: center;
+    color: $main-light;
+  }
+}
+
 .cross-svg {
   color: $main-light;
 }

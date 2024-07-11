@@ -1,0 +1,38 @@
+@import "../../scss_utils/vars";
+
+.form__input {
+  font-size: 1.125rem;
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  border: 1px solid $accent-color;
+  box-shadow: rgba($accent-color, 0.1) 0.25rem 0.25rem 0.625rem;
+  &:focus {
+    outline: none;
+  }
+}
+
+.form__input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  color: $red-logo;
+  gap: 0.2rem;
+}
+
+.input-error {
+  border: 1px solid $red-logo;
+  outline: 1px solid $red-logo;
+}
+
+.message {
+  width: calc(100% - 2rem);
+  height: 8rem;
+  resize: none;
+}

@@ -25,8 +25,8 @@ const Projects = () => {
     return (
         <div className="gaps">
             <Divider link={"projects"} spoiler={"где творятся чудеса"} title={"наши проекты"} />
-            <div className="Projects wrapper" id="projects">
-                <div className="Projects-Grid">
+            <div className="projects wrapper" id="projects">
+                <div className="projects__container">
                     {projectsArray.map((project, id) => (
                       <InfoCard project={project} key={id}/>
                     ))}

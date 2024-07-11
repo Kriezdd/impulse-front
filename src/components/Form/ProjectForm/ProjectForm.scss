@@ -1,0 +1,17 @@
+@import "../../../scss_utils/vars";
+
+.project-form {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  .group-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .error {
+    text-shadow: $dull-light 0 0 1px;
+  }
+}

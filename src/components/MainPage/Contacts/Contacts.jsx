@@ -1,11 +1,11 @@
 import Divider from "../../ui/Divider/Divider.jsx";
-import MessageForm from "./MessageForm/MessageForm.jsx";
+import MessageForm from "../../Form/MessageForm/MessageForm.jsx";
 import './Contacts.scss';
 import ContactsCard from "./ContactsCard/ContactsCard.jsx";
 
 const Contacts = () => {
   return (
-    <div className="gaps">
+    <div className="contacts-section gaps">
       <Divider link="contacts" title="наши контакты" spoiler="как с нами связаться"/>
       <div className="wrapper" id="contacts">
         <div className="container">
