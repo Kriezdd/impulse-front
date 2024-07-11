@@ -27,15 +27,16 @@ const ProjectForm = ({project}) => {
       child_birthday: data.child_birthday,
       message: data.message,
     };
-
-    emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams, emailJS.publicID).then(
-      (response) => {
-        console.log('SUCCESS!', response.status, response.text);
-      },
-      (error) => {
-        console.log('FAILED...', error);
-      },
-    );
+    // todo: delete lock when prod
+    alert("Ты супер!");
+    // emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams, emailJS.publicID).then(
+    //   (response) => {
+    //     console.log('SUCCESS!', response.status, response.text);
+    //   },
+    //   (error) => {
+    //     console.log('FAILED...', error);
+    //   },
+    // );
   }
 
   return (

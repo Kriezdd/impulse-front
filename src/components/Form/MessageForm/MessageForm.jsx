@@ -23,15 +23,16 @@ const MessageForm = () => {
       phone: data.phone,
       message: data.message,
     };
-
-    emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams).then(
-      (response) => {
-        console.log('SUCCESS!', response.status, response.text);
-      },
-      (error) => {
-        console.log('FAILED...', error);
-      },
-    );
+    // todo: delete lock when prod
+    alert("Ты супер!");
+    // emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams).then(
+    //   (response) => {
+    //     console.log('SUCCESS!', response.status, response.text);
+    //   },
+    //   (error) => {
+    //     console.log('FAILED...', error);
+    //   },
+    // );
   }
 
   return (
