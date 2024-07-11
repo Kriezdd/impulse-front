@@ -12,19 +12,19 @@ import './index.scss';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/impulse-front/",
     element: <App/>,
     children: [
       {
-        path: "/",
+        path: "/impulse-front/",
         element: <MainPage/>,
       },
       {
-        path: "/impulse",
+        path: "/impulse-front/impulse",
         element: <Impulse/>,
       },
       {
-        path: "/leagues",
+        path: "/impulse-front/leagues",
         element: <Leagues/>,
       }
     ]

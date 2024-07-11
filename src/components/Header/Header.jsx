@@ -19,7 +19,7 @@ const Header = () => {
     <header className="header">
       <nav className="header__container wrapper">
         {
-          pathname === "/" ?
+          pathname === "/impulse-front/" ?
             <>
               <ScrollLink
                 activeClass="active"
@@ -82,12 +82,12 @@ const Header = () => {
             </>
             :
             <>
-              <Link to={"/"} className="Header-LogoContainer logo">
+              <Link to="/impulse-front/" className="Header-LogoContainer logo">
                 <img src={logo} alt="logopic" className="logo-img"/>
                 <h3 className="logo-title">Импульс</h3>
               </Link>
               <ul>
-                <Link to={"/"}>Вернуться на главную</Link>
+                <Link to="/impulse-front/">Вернуться на главную</Link>
               </ul>
             </>
         }

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer__container">
           <div className="footer__content naming">
             {
-              pathname === "/" ?
+              pathname === "/impulse-front/" ?
                 <ScrollLink
                   activeClass="active"
                   smooth spy to="root"
@@ -27,7 +27,7 @@ const Footer = () => {
                   <img src={logo} alt="logopic" className="logo-img"/>
                   <h3 className="logo-title footer-text">Импульс</h3>
                 </ScrollLink> :
-                <Link to="/" className="logo">
+                <Link to="/impulse-front/" className="logo">
                   <img src={logo} alt="logopic" className="logo-img"/>
                   <h3 className="logo-title footer-text">Импульс</h3>
                 </Link>
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
           </div>
           {
-            pathname === "/" &&
+            pathname === "/impulse-front/" &&
             <div className="footer__content sections">
               <h4 className="small-text">Разделы:</h4>
               <ul className="footer__nav">
@@ -85,10 +85,10 @@ const Footer = () => {
           <div className="footer__content sections">
             <h4 className="small-text">Проекты:</h4>
             <ul className="footer__nav">
-              <Link tabIndex="0" to="/impulse">
+              <Link tabIndex="0" to="/impulse-front/impulse">
                 <li className="small-text footer__nav-item">Импульс</li>
               </Link>
-              <Link tabIndex="0" to="/leagues">
+              <Link tabIndex="0" to="/impulse-front/leagues">
                 <li className="small-text footer__nav-item">Лиги</li>
               </Link>
             </ul>

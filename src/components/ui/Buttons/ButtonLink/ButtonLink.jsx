@@ -3,7 +3,7 @@ import './ButtonLink.scss';
 
 const ButtonLink = ({address, title}) => {
     return (
-        <Link to={address}>
+        <Link to={`/impulse-front${address}`}>
             <button className="ButtonLink">
                 {title}
             </button>
