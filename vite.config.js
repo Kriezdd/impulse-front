@@ -12,5 +12,5 @@ export default defineConfig({
       '$components': resolve('./src/components'),
     }
   },
-  base: "/impulse-website/",
+  base: "/impulse-front/",
 })
