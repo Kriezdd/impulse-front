@@ -13,4 +13,11 @@ export default defineConfig({
     }
   },
   base: "/impulse-front/",
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: `assets/[name].[ext]`
+      }
+    }
+  }
 })
