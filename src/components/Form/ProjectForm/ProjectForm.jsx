@@ -11,7 +11,7 @@ const emailJS = {
   publicID: "o9lstfwhy-ua6dvbl",
 }
 
-const ProjectForm = ({project}) => {
+const ProjectForm = ({project, setModalActive}) => {
   const {
     register,
     handleSubmit,
@@ -27,6 +27,7 @@ const ProjectForm = ({project}) => {
       child_birthday: data.child_birthday,
       message: data.message,
     };
+    setModalActive(false);
     // todo: delete lock when prod
     alert("Ты супер!");
     // emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams, emailJS.publicID).then(
@@ -37,6 +38,7 @@ const ProjectForm = ({project}) => {
     //     console.log('FAILED...', error);
     //   },
     // );
+
   }
 
   return (

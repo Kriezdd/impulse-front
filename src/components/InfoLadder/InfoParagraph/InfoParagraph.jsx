@@ -1,7 +1,7 @@
 import './InfoParagraph.scss';
 
 const InfoParagraph = ({par}) => {
-
+  console.log(par)
 
   return (
     <div className="paragraph-container">

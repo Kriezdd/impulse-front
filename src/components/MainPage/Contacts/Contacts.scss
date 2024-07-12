@@ -13,8 +13,7 @@
   margin-bottom: 4rem;
   @include respond(tab-land) {
     .container {
-      width: calc(100% - 1rem);
-      margin: 0 auto;
+      width: calc(100% - 2rem);
     }
     p, input, textarea {
       font-size: 1rem;

@@ -26,7 +26,7 @@ const Modal = ({isModalActive, setModalActive, project}) => {
             <div className='modal-content gaps'>
                 <h2 className='modal-content__text'>Заявка на участие в проекте</h2>
                 <p className='modal-content__text'>Заполните и отправьте форму, а мы свяжемся с вами, чтобы подтвердить завявку или ответить на все ваши вопросы</p>
-                <ProjectForm project={project} />
+                <ProjectForm project={project} setModalActive={setModalActive} />
             </div>
         </div>
     )
