@@ -1,3 +1,8 @@
+@import "../../scss_utils/mixins";
+
 .info-ladder {
-  max-width: 1100px;
+  max-width: 1000px;
+  @include respond(tab-port) {
+    max-width: calc(100% - 2rem);
+  }
 }

@@ -41,23 +41,43 @@
       display: none;
     }
 
-    @include respond(tab-port) {
+
+  }
+
+  .additional__nav-items {
+    display: flex;
+    align-items: center;
+  }
+  @include respond(phone) {
+    .additional__nav-items {
+      .additional__back-phrase {
+        display: none;
+      }
+    }
+  }
+
+  @include respond(tab-port) {
+    .header__container {
       .toggle-header-nav {
         display: block;
         cursor: pointer;
         color: $main-dark;
         opacity: 1;
         transition: all 200ms ease-in-out;
+
         &:hover {
           color: $accent-color;
         }
+
         &:active {
           opacity: 0;
         }
       }
+
       .nav-items__container {
         display: none;
       }
+
       .nav-items__container.active {
         display: block;
         position: absolute;
@@ -67,7 +87,7 @@
         box-shadow: 0 4px 4px 0 rgba(114, 76, 249, 0.1);
         width: fit-content;
         border-radius: 10px;
-        padding: 2rem 4rem;
+        padding: 1.8rem 2.4rem;
 
         .nav-items {
           display: flex;
@@ -77,7 +97,7 @@
           gap: 3.6rem;
 
           li, a {
-            font-size: 2rem;
+            font-size: 1.4rem;
             transition: all 100ms ease-in-out;
 
             &:hover {

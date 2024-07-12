@@ -14,7 +14,7 @@ const Contacts = () => {
             время</p>
           <MessageForm />
         </div>
-        <div className="container">
+        <div className="container contacts__additional">
           <h3><strong>Другие способы связаться с нами:</strong></h3>
           <ContactsCard />
         </div>

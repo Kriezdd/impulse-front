@@ -117,9 +117,9 @@ const Team = () => {
     ]
 
     return (
-        <div className="Team gaps" >
+        <div className="team gaps" >
             <Divider link={"team"} spoiler={"кто творит для вас"} title={'наша команда'}/>
-            <div className="Team-Grid wrapper" id="team">
+            <div className="team__container wrapper" id="team">
                 {members.map((member, index) => (<MemberCard key={index} member={member}/>))}
             </div>
         </div>

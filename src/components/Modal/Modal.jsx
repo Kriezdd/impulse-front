@@ -12,18 +12,14 @@ const Modal = ({isModalActive, setModalActive, project}) => {
 
     useEffect(() => {
         if (isModalActive) {
-            ref.current.classList.add('modal-active');
-
             document.body.style.overflow = 'hidden';
         } else {
-            ref.current.classList.remove('modal-active');
-
             document.body.style.overflow = 'auto';
         }
     }, [isModalActive])
 
     return (
-        <div ref={ref} className='modal-container'>
+        <div ref={ref} className={`modal-container ${isModalActive ? 'modal-active' : ''}`}>
             <div onClick={CloseModalHandler} className='cross'>
                 <Cross />
             </div>

@@ -17,7 +17,7 @@ const Gallery = () => {
   const galleryImages = imagesToGallery(images)
 
   return (
-    <div className="gallery-section">
+    <div className="gallery-section gaps">
       <Divider link="gallery" spoiler="фото с прошлых проектов" title="наша галерея"/>
       <div id="gallery" className="wrapper">
         <ImageGallery

@@ -1,25 +1,25 @@
 @import "../../scss_utils/vars";
+@import "../../scss_utils/mixins";
 
 .project-ad__container {
   margin-top: 65px;
+  width: 100%;
 
   .project-ad {
     margin: 0 auto;
     display: flex;
     gap: 3rem;
-    max-width: 70rem;
-    min-height: 20rem;
-    max-height: 380px;
+    max-width: 100%;
 
     .icon {
       color: $accent-color;
     }
 
     .project-ad__image {
-      max-height: 100%;
-      max-width: 45%;
+      min-width: 34rem;
+      height: 24rem;
       object-fit: cover;
-      border-radius: 50px 100px;
+      border-radius: 25px 50px;
     }
 
     .project-ad__info {
@@ -34,7 +34,9 @@
 
       .info-points__container {
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
+        gap: 1.2rem;
+        flex-wrap: wrap;
       }
 
       .info-point {
@@ -47,6 +49,61 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+      }
+    }
+  }
+
+  @include respond(tab-land) {
+    .project-ad {
+      gap: 1.8rem;
+      .project-ad__image {
+        min-width: 40%;
+        max-width: 40%;
+      }
+      .project-ad__info {
+        .info-point {
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+  @include respond(tab-port) {
+    .project-ad {
+      flex-direction: column;
+      align-items: center;
+
+      .project-ad__image {
+        min-width: 90%;
+        max-width: 90%;
+        height: 30rem;
+      }
+
+      .project-ad__info {
+        width: calc(100% - 3rem);
+        gap: 1rem;
+        .info-price {
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+  @include respond(phone) {
+    .project-ad {
+      .project-ad__image {
+        height: 18rem;
+        width: 100%;
+      }
+      .project-ad__info {
+        .info-title {
+          font-size: 2rem;
+        }
+      }
+      .icon {
+        width: 1.6rem;
+        height: 1.6rem;
       }
     }
   }

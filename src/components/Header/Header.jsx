@@ -86,9 +86,11 @@ const Header = () => {
                 <img src={logo} alt="logopic" className="logo-img"/>
                 <h3 className="logo-title">Импульс</h3>
               </Link>
-              <ul>
-                <Link to="/impulse-front/">Вернуться на главную</Link>
-              </ul>
+              <div className="additional__nav-items">
+                <div className="additional__back-phrase">
+                  <Link to="/impulse-front/">Вернуться на главную</Link>
+                </div>
+              </div>
             </>
         }
         {}

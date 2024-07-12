@@ -22,21 +22,21 @@ const MemberCard = ({member}) => {
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className='MemberCard'
+            className='member-card'
         >
             <div
                 style={{
                     backgroundImage: `url(${member.pic})`
                 }}
-                className={`MemberBackground`}
+                className={`member-card__background`}
             />
 
             <MemberModal member={member} isDetailed={isDetailed} />
 
-            <div className={`InfoContainer ${isDetailed ? `` : `active`}`}>
-                <div className="Member-MainInfo">
+            <div className={`info__container ${isDetailed ? `` : `active`}`}>
+                <div className="member__main-info">
                     <p>{member.name}</p>
-                    <p className="memberPos small-text">{member.position}</p>
+                    <p className="member__pos small-text">{member.position}</p>
                 </div>
             </div>
 

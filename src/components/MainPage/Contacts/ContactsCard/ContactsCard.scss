@@ -1,4 +1,5 @@
 @import "../../../../scss_utils/vars";
+@import "../../../../scss_utils/mixins";
 
 .contacts-card {
   padding: 1.5rem;
@@ -9,11 +10,12 @@
   width: 100%;
   border-radius: 10px;
   background: $main-light;
-  box-shadow: rgba($accent-color, 0.1) 0.25rem 0.25rem 0.625rem;
+  box-shadow: rgba($accent-color, 0.2) 0.1rem 0.1rem 0.8rem;
 
   .contacts-text-link {
     color: $accent-color;
     transition: color 200ms ease-in-out;
+
     &:hover {
       color: $main-dark;
       text-decoration: underline;
@@ -22,8 +24,27 @@
 
   .contacts__social {
     display: flex;
+    gap: 1rem;
     align-items: center;
-    gap: 0.5rem;
+    .contacts__social-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+  @include respond(tab-port) {
+    width: calc(100% - 2rem);
+  }
+  @include respond(phone) {
+    text-align: left;
+    .contacts-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .contacts__social {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 }
 

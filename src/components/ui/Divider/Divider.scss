@@ -1,4 +1,5 @@
 @import "../../../scss_utils/vars";
+@import "../../../scss_utils/mixins";
 
 .divider {
   height: 6.25rem;
@@ -11,12 +12,17 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, transparent 0%, rgba(114, 76, 249, 0.1) 50%, transparent 100%);
-}
+  .spoiler {
+    color: $accent-color;
+    text-align: center;
+    &:hover {
+      font-weight: 700;
+    }
+  }
 
-.spoiler {
-  color: $accent-color;
-  text-align: center;
-  &:hover {
-    font-weight: 700;
+  @include respond(tab-port) {
+    margin-bottom: 3rem;
   }
 }
+
+

@@ -1,4 +1,5 @@
 @import "../../../scss_utils/vars";
+@import "../../../scss_utils/mixins";
 
 .project-form {
   width: 52rem;
@@ -13,5 +14,15 @@
   }
   .error {
     text-shadow: $dull-light 0 0 1px;
+  }
+  @include respond(tab-land) {
+    width: 100%;
+
+    .group-info {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include respond(tab-port) {
+    width: calc(100% - 1rem);
   }
 }
