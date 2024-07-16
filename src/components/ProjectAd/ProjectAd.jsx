@@ -1,11 +1,26 @@
+import {useState} from "react";
+import {ToastContainer, toast, Bounce} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Divider from "../ui/Divider/Divider.jsx";
 import ButtonForm from "../ui/Buttons/ButtonForm/ButtonForm.jsx";
 import Modal from '$components/Modal/Modal.jsx'
 import './ProjectAd.scss';
-import {useState} from "react";
 
 const ProjectAd = ({info}) => {
   const [isModalActive, setModalActive] = useState(false);
+  const notify = () => {
+    toast.success("Форма успешно отправлена!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  }
   const projectAd = info;
 
   return (
@@ -61,8 +76,8 @@ const ProjectAd = ({info}) => {
           </div>
         </div>
       </div>
-
-      <Modal isModalActive={isModalActive} setModalActive={setModalActive} project={projectAd.project} />
+      <ToastContainer/>
+      <Modal isModalActive={isModalActive} setModalActive={setModalActive} project={projectAd.project} notify={notify} />
     </div>
   );
 };

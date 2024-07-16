@@ -1,38 +1,47 @@
-import ButtonSubmit from "../../ui/Buttons/ButtonSubmit/ButtonSubmit.jsx";
+import {useState} from "react";
 import {useForm} from "react-hook-form";
-import * as emailjs from "@emailjs/browser";
+import {ToastContainer, toast, Bounce} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {sendMessage} from "../../../api/telegram.js";
 import ErrorIcon from "$components/Form/elements/ErrorIcon.jsx";
+import ButtonSubmit from "../../ui/Buttons/ButtonSubmit/ButtonSubmit.jsx";
 import './../FormStyling.scss';
 import './MessageForm.scss';
 
-const emailJS = {
-  serviceID: "service_ozsz83l",
-  templateID: "template_6ds5y48",
-  publicID: "o9lstfwhy-ua6dvbl",
-}
-
 const MessageForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const notify = () => {
+    toast.success("Форма успешно отправлена!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  }
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: {errors},
   } = useForm()
-  const onSubmit = (data) => {
-    const templateParams = {
-      from_name: data.name,
-      phone: data.phone,
-      message: data.message,
-    };
-    // todo: delete lock when prod
-    alert("Ты супер!");
-    // emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams).then(
-    //   (response) => {
-    //     console.log('SUCCESS!', response.status, response.text);
-    //   },
-    //   (error) => {
-    //     console.log('FAILED...', error);
-    //   },
-    // );
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      const message = `Новое сообщение с сайта! %0A Имя: ${data.name} %0A Телефон: ${data.phone} %0A Сообщение: ${data.message}`;
+      await sendMessage(message);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      reset();
+      setIsLoading(false);
+      notify();
+    }
   }
 
   return (
@@ -78,10 +87,28 @@ const MessageForm = () => {
           </p>
         }
       </div>
-      <p className="small-text light-bg aggreement">
-        *Отправляя форму, вы даёте согласие на обработку персональных данных и принимаете условия соглашения
-      </p>
-      <ButtonSubmit text="Отправить форму"/>
+      <div className="form__input-container checkbox">
+        <div className="checkbox__wrapper">
+          <input
+            type="checkbox"
+            id="checkbox"
+            className="checkbox__input"
+            {...register("checkbox", {required: true})}
+          />
+          <label htmlFor="checkbox">
+            <p>Я согласен на обработку персональных данных</p>
+          </label>
+        </div>
+        {
+          errors.checkbox?.type === 'required' &&
+          <p className=" small-text error">
+            <ErrorIcon/>
+            Подтвердите согласие
+          </p>
+        }
+      </div>
+      <ButtonSubmit text="Отправить форму" isLoading={isLoading}/>
+      <ToastContainer/>
     </form>
   );
 };

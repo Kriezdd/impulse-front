@@ -1,44 +1,35 @@
+import {useState} from "react";
 import {useForm} from "react-hook-form";
 import ErrorIcon from "$components/Form/elements/ErrorIcon.jsx";
 import ButtonSubmit from "$components/ui/Buttons/ButtonSubmit/ButtonSubmit.jsx";
-import * as emailjs from "@emailjs/browser";
 import './../FormStyling.scss';
 import './ProjectForm.scss';
+import {sendMessage} from "../../../api/telegram.js";
 
-const emailJS = {
-  serviceID: "service_ozsz83l",
-  templateID: "template_lzgi94g",
-  publicID: "o9lstfwhy-ua6dvbl",
-}
+const ProjectForm = ({project, setModalActive, notify}) => {
+  const [isLoading, setIsLoading] = useState(false);
 
-const ProjectForm = ({project, setModalActive}) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: {errors},
   } = useForm()
 
-  const onSubmit = (data) => {
-    const templateParams = {
-      project,
-      from_name: data.name,
-      phone: data.phone,
-      child_name: data.child_name,
-      child_birthday: data.child_birthday,
-      message: data.message,
-    };
-    setModalActive(false);
-    // todo: delete lock when prod
-    alert("Ты супер!");
-    // emailjs.send(emailJS.serviceID, emailJS.templateID, templateParams, emailJS.publicID).then(
-    //   (response) => {
-    //     console.log('SUCCESS!', response.status, response.text);
-    //   },
-    //   (error) => {
-    //     console.log('FAILED...', error);
-    //   },
-    // );
-
+  const onSubmit = async (data) => {
+    try {
+      setIsLoading(true);
+      const message = `Новая заявка в проект ${project}! %0A Имя: ${data.name} %0A Телефон: ${data.phone} 
+      %0A Имя ребенка: ${data.child_name} %0A Дата рождения ребёнка: ${data.child_birthday} %0A Сообщение: ${data.message}`;
+      await sendMessage(message);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      reset();
+      setIsLoading(false);
+      setModalActive(false);
+      notify();
+    }
   }
 
   return (
@@ -93,10 +84,27 @@ const ProjectForm = ({project, setModalActive}) => {
         {...register("message")}
       />
       </div>
-        <p className="small-text aggreement">
-          *Отправляя форму, вы даёте согласие на обработку персональных данных и принимаете условия соглашения
-        </p>
-      <ButtonSubmit text="Отправить форму"/>
+      <div className="form__input-container checkbox">
+        <div className="checkbox__wrapper">
+          <input
+            type="checkbox"
+            id="checkbox"
+            className="checkbox__input"
+            {...register("checkbox", {required: true})}
+          />
+          <label htmlFor="checkbox">
+            <p className="light-text">Я согласен с <a href="#">политикой обработки персональных данных</a></p>
+          </label>
+        </div>
+        {
+          errors.checkbox?.type === 'required' &&
+          <p className="small-text error">
+            <ErrorIcon/>
+            Подтвердите согласие
+          </p>
+        }
+      </div>
+      <ButtonSubmit text="Отправить форму" isLoading={isLoading}/>
     </form>
   )
     ;

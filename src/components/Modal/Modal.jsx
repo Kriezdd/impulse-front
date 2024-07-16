@@ -3,7 +3,7 @@ import Cross from './elements/Cross.jsx'
 import './Modal.scss';
 import ProjectForm from "$components/Form/ProjectForm/ProjectForm.jsx";
 
-const Modal = ({isModalActive, setModalActive, project}) => {
+const Modal = ({isModalActive, setModalActive, project, notify}) => {
     const ref = useRef();
 
     function CloseModalHandler() {
@@ -26,7 +26,7 @@ const Modal = ({isModalActive, setModalActive, project}) => {
             <div className='modal-content gaps'>
                 <h2 className='modal-content__text'>Заявка на участие в проекте</h2>
                 <p className='modal-content__text'>Заполните и отправьте форму, а мы свяжемся с вами, чтобы подтвердить завявку или ответить на все ваши вопросы</p>
-                <ProjectForm project={project} setModalActive={setModalActive} />
+                <ProjectForm project={project} setModalActive={setModalActive} notify={notify}/>
             </div>
         </div>
     )

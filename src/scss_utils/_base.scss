@@ -121,12 +121,16 @@ button, a {
 }
 
 body {
-  //background: url("resources/images/bg.png");
-  //background-size: cover;
+  background-image: url("../src/images/newbg.png");
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
 .small-text {
   font-size: $s-font-size;
+}
+.light-text {
+  color: $main-light;
 }
 .light-bg {
   color: rgba($main-dark, 0.8);
@@ -135,4 +139,10 @@ body {
 
 .xs-text {
   font-size: $xs-font-size;
+}
+
+:root {
+  --toastify-color-light: #fcfcfc;
+  --toastify-color-success: #724CF9;
+  --toastify-font-family: 'Nunito', sans-serif;
 }
